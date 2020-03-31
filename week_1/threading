@@ -7,8 +7,8 @@ do
 	# number of subdivisions:
 	for s in 2 4 6 8 16 32 64 128 256 512 1024 2048 3072 4096
 	do
-		echo NUMTRIES = $s
-		g++ -DNUMTRIES=$s - DNUMT=$t project_0.cpp -o prog -lm -fopenmp
+		echo NUMS = $s
+		g++ -DNUMS=$s -DNUMT=$t project_0.cpp -o prog -lm -fopenmp
 		./prog
 	done
 done
