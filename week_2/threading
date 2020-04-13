@@ -2,17 +2,12 @@
 
 #number of threads:
 echo "Testing with various number of threads/n"
-for t in 1 2 4 6 8 10 12
+for t in 1 2 4 8
 do
-	echo NUMT = $t
-	g++ -DNUMT=$t project_1.cpp -o prog -lm -fopenmp
-    ./prog
-done
-
-echo "Testing with various number of trials and single thread/n"
-for s in 1000 2000 3000 4000 5000 6000 7000 8000 9000 10000 100000 1000000 10000000
-do
-	echo NUMTRIALS = $s
-	g++ -DNUMTRIALS=$s -DNUMT=1 project_1.cpp -o prog -lm -fopenmp
-	./prog
+	for s in 1 10 100 1000 10000 100000 200000 300000 400000 500000
+	do
+		echo NUMTRIALS = $s
+		g++ -DNUMTRIALS=$s -DNUMT=$t project_1.cpp -o prog -O3 -lm -fopenmp
+		./prog
+	done
 done

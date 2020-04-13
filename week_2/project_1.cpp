@@ -157,7 +157,7 @@ int main( int argc, char *argv[ ] ){
 //write a result record file
     ofstream result;
     result.open("result.txt", ios::app);
-    result << NUMT << "\t" << NUMTRIALS << "\t" << currentProb << "\t" << maxPerformance << endl;
+    result << NUMT << "\t" << NUMTRIALS << "\t" << currentProb << "\t" << maxPerformance << "\t" << execution_time << endl;
     result.close();
     return 0;
 }
