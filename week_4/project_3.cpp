@@ -61,6 +61,14 @@ int main( int argc, char *argv[ ] ) {
 	return 1;
 #endif
 
+        // check "result.txt" file exists, then delete it
+        if (remove("result.txt") == 0){
+                printf("\nDeleted old 'result.txt' succesffully!\n");
+        }
+        else{
+                printf("\nthe old result file doesn't exist\n");
+        }
+
         // starting date and time:
         NowMonth =    0;
         NowYear  = 2020;
@@ -202,12 +210,12 @@ void Watcher(){
                 float cm_height = inch_to_cm(NowHeight);
 	// according to the barrier schema, Watcher should 
         // 1. print results and increment time
-                printf("Date: %d-%d\ttemperature: %f C\tprecipitation: %fcm\tgrain height: %fcm\tthe number of deer: %d\n", NowMonth + 1, NowYear, c_temp, cm_precip, cm_height, NowNumDeer);
+                printf("Date: %d-%d\ttemperature: %f C\tprecipitation: %fcm\tgrain height: %fcm\tGrainDeer: %d\tAlien: %d\n", NowMonth + 1, NowYear, c_temp, cm_precip, cm_height, NowNumDeer, NowNumAlien);
         
         //write a result record file
                 FILE *result;
                 result = fopen("result.txt", "a");
-                fprintf(result, "%d-%d\t%f\t%f\t%f\t%d\n", NowMonth + 1, NowYear, c_temp, cm_precip, cm_height, NowNumDeer);
+                fprintf(result, "%d-%d\t%f\t%f\t%f\t%d\t%d\n", NowMonth + 1, NowYear, c_temp, cm_precip, cm_height, NowNumDeer, NowNumAlien);
                 fclose(result);
 
                 if (NowMonth == 11){
@@ -239,7 +247,7 @@ void Alien(){
         // And then increase the number of graindeer by one.
                 if (NextNumAlien >= 0){ 
                         if (NowNumDeer > NowNumAlien * 2){
-                                NextNumDeer = NowNumDeer - 1;
+                                NowNumDeer = NowNumDeer - 1;
                                 NextNumAlien = NowNumAlien + 1;
                         }
 
