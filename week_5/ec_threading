@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#number of threads:
+echo "Project 4 ec bash script"
+for t in 1 2 4 8
+do
+	for s in 1024 2048 3072 4096 6144 8192 16384 32768 65536 131072 262144 524288 1048576 2097152 4194304 8388608
+	do
+		echo ARR_SIZE = $s
+		echo NUMT = $t
+		g++ -DARR_SIZE=$s -DNUMT=$t -o ec_script project_4_ec.cpp -O3 -lm -fopenmp
+		./ec_script
+	done
+done
+echo "ec_result.txt is successfully created ! "

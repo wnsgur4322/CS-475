@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#number of threads:
+echo "Project 4 bash script"
+#for t in 1 2 4 8
+#do
+for s in 1024 2048 3072 4096 6144 8192 16384 32768 65536 131072 262144 524288 1048576 2097152 4194304 8388608
+do
+	echo ARR_SIZE = $s
+	g++ -DARR_SIZE=$s -o prog project_4.cpp -O3 -lm -fopenmp
+	./prog
+done
+echo "result.txt is successfully created ! "
+#done
