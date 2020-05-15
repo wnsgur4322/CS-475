@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH -J project_5
+#SBATCH -A cs475-575
+#SBATCH -p class
+#SBATCH --gres=gpu:1
+#SBATCH -o project_5.out
+#SBATCH -e project_5.err
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=jeongju@oregonstate.edu
+/usr/local/apps/cuda/cuda-10.1/bin/nvcc -o proj project_5.cu
+./proj

@@ -1,0 +1,88 @@
+BLOCKSIZE = 16
+NUMTRIALS = 16384
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 32768
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 65536
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 131072
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 262144
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 524288
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 1048576
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+BLOCKSIZE = 32
+NUMTRIALS = 16384
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 32768
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 65536
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 131072
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 262144
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 524288
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 1048576
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+BLOCKSIZE = 64
+NUMTRIALS = 16384
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 32768
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 65536
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 131072
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 262144
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 524288
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 1048576
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+BLOCKSIZE = 128
+NUMTRIALS = 16384
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 32768
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 65536
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 131072
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 262144
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 524288
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+
+NUMTRIALS = 1048576
+GPU Device 0: "Tesla V100-DGXS-32GB" with compute capability 7.0
+

@@ -1,0 +1,5 @@
+project_5.cu(130): warning: variable "outx" was declared but never referenced
+
+Number of Trials =    1048576, MegaTrials/Second = 11825.3342
+
+Probability = 42.017 %
