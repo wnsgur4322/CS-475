@@ -1,0 +1,47 @@
+#!/bin/bash
+#SBATCH -J project_6_loop
+#SBATCH -A cs475-575
+#SBATCH -p class
+#SBATCH --gres=gpu:1
+#SBATCH -o project_6_loop.out
+#SBATCH -e project_6_loop.err
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=jeongju@oregonstate.edu
+
+rm -rf result.txt
+
+echo "ArrayMult part"
+for g in 1 4 16 64 128 512 1024 2048 4096 8192
+do
+echo NMB = $g
+	for l in 8 16 32 64 128 256 512
+	do
+	echo LOCAL_SIZE = $l
+	g++ -o prog project_6.cpp /usr/local/apps/cuda/cuda-10.1/lib64/libOpenCL.so.1.1 -DNMB=$g -DLOCAL_SIZE=$l -lm -fopenmp
+	./prog
+	done
+done
+
+echo "ArrayMultAdd part"
+for g in 1 4 16 64 128 512 1024 2048 4096 8192
+do
+echo NMB = $g
+	for l in 8 16 32 64 128 256 512
+	do
+	echo LOCAL_SIZE = $l
+	g++ -o prog project_6.cpp /usr/local/apps/cuda/cuda-10.1/lib64/libOpenCL.so.1.1 -DNMB=$g -DLOCAL_SIZE=$l -DMULSUM -lm -fopenmp
+	./prog
+	done
+done
+
+echo "ArrayMultReduce part"
+for g in 1 4 16 64 128 512 1024 2048 4096 8192
+do
+echo NMB = $g
+	for l in 32 64 128 256
+	do
+	echo LOCAL_SIZE = $l
+	g++ -o reduce project_6_reduce.cpp /usr/local/apps/cuda/cuda-10.1/lib64/libOpenCL.so.1.1 -DNMB=$g -DLOCAL_SIZE=$l -lm -fopenmp
+	./reduce
+	done
+done

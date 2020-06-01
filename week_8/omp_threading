@@ -1,0 +1,21 @@
+#!/bin/bash
+
+rm -rf omp_result.txt
+rm -rf omp_sums_result.txt
+#number of threads:
+echo "project 7b - autocorrelation using CPU OpenMP"
+for t in 1 2 4
+do
+	echo NUMT = $t
+	g++ -DNUMT=$t project_7b_omp.cpp -o omp -O3 -lm -fopenmp
+	./omp
+done
+
+rm -rf simd_result.txt
+rm -rf simd_sums_result.txt
+
+echo "project 7b - autocorrelation using CPU SIMD"
+echo SSE_WIDTH = 4
+echo NUMTRIES = 50
+g++ -DNUMT=$t project_7b_simd.cpp -o simd -O3 -lm -fopenmp
+./simd

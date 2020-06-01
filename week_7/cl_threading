@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH -J project_6
+#SBATCH -A cs475-575
+#SBATCH -p class
+#SBATCH --gres=gpu:1
+#SBATCH -o project_6.out
+#SBATCH -e project_6.err
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=jeongju@oregonstate.edu
+rm -rf result.txt
+
+g++ -o proj project_6.cpp /usr/local/apps/cuda/cuda-10.1/lib64/libOpenCL.so.1.1 -DMULSUM -lm -fopenmp
+./proj
